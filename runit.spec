@@ -20,15 +20,12 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 Url:            http://smarden.org/runit/
 Source:         http://smarden.org/runit/runit-%{version}.tar.gz
-Patch:          runit-2.1.1-etc-service.patch
-Patch1:         runit-2.1.1-runsvdir-path-cleanup.patch
-Patch2:         runit-2.1.1-term-hup-option.patch
+Patch:          runit-2.1.1-no-static-libc.patch
 
 Obsoletes: runit <= %{version}-%{release}
 Provides: runit = %{version}-%{release}
 
 BuildRequires: make gcc
-%{?el6:BuildRequires:        glibc-static}
 %{?_with_dietlibc:BuildRequires:        dietlibc}
 
 Summary:        A UNIX init scheme with service supervision
@@ -53,8 +50,6 @@ echo "%{?_with_dietlibc:diet -Os }%__cc $RPM_OPT_FLAGS" >conf-cc
 echo "%{?_with_dietlibc:diet -Os }%__cc -Os -pipe"      >conf-ld
 popd
 %patch
-%patch1
-%patch2
 
 %build
 sh package/compile
