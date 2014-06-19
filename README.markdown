@@ -6,7 +6,6 @@ So, thanks to Scott for the RPMs and thanks to [SuSE](http://www.opensuse.org/) 
 
 ## Building
 
-1. `yum install git sudo rpm-build rpmdevtools gcc make`
-2. `git clone https://github.com/imeyer/runit-rpm.git`
-3. `cd runit-rpm`
-4. `sudo -H ./build.sh`
+    yum install git sudo rpm-build rpmdevtools gcc make
+    git clone https://github.com/phusion/runit-rpm.git
+    cd runit-rpm && sudo -H ./build.sh
