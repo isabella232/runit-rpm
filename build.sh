@@ -15,4 +15,4 @@ cp -f ${whereami}/runit.spec ~/rpmbuild/SPECS/
 cp -f ${whereami}/*.patch    ~/rpmbuild/SOURCES/
 /usr/bin/spectool -C ~/rpmbuild/SOURCES/ -g ${whereami}/runit.spec 
 
-rpmbuild -bb ~/rpmbuild/SPECS/runit.spec
+rpmbuild -ba ~/rpmbuild/SPECS/runit.spec
